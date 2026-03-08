@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Leaf, LogOut, Users, Package, ShieldCheck, ChevronRight } from 'lucide-react'
+import { Leaf, LogOut, Users, LayoutDashboard, ShieldCheck, ChevronRight } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -11,7 +11,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const breadcrumb = location.pathname === '/admin/users'
     ? 'Quản lý người dùng'
     : location.pathname === '/admin/batches'
-    ? 'Tất cả lô chè'
+    ? 'Tổng quan'
     : 'Admin'
 
   return (
@@ -51,8 +51,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
               }`}
             >
-              <Package className="w-4 h-4" />
-              <span className="hidden sm:inline">Lô chè</span>
+              <LayoutDashboard className="w-4 h-4" />
+              <span className="hidden sm:inline">Tổng quan</span>
             </Link>
           </nav>
 

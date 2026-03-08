@@ -12,7 +12,7 @@ export default function AdminRoute() {
     )
   }
 
-  if (!agent) return <Navigate to="/login" replace />
+  if (!agent) return <Navigate to="/admin/login" replace />
   if (!isAdmin) return <Navigate to="/" replace />
 
   return <Outlet />
