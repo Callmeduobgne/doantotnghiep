@@ -86,7 +86,7 @@ export const authApi = {
   }) => api.post('/api/auth/register', data),
 
   login: (data: { username: string; password: string }) =>
-    api.post<{ token: string; agentId: string; username: string; farmName: string }>(
+    api.post<{ token: string; agentId: string; username: string; farmName: string; role: string }>(
       '/api/auth/login',
       data
     ),

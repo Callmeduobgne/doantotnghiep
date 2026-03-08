@@ -31,6 +31,8 @@ export default function App() {
           <Route path="/admin/batches" element={<AdminBatchesPage />} />
         </Route>
 
+        {/* Wildcard: redirect về đúng trang theo role */}
+        <Route path="/admin" element={<Navigate to="/admin/users" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

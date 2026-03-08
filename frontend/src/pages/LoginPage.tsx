@@ -16,7 +16,8 @@ export default function LoginPage() {
     try {
       const { data } = await authApi.login(form)
       localStorage.setItem('token', data.token)
-      nav('/')
+      // Admin → trang quản trị, đại lý → trang dashboard
+      nav(data.role === 'admin' ? '/admin/users' : '/')
     } catch {
       setError('Sai tên đăng nhập hoặc mật khẩu.')
     } finally {
